@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>添加及删除表格</title>
+		
+	</head>
+	<body>
+		
+		<label >学号</label>
+		<input type="text" id="num" />
+		<br />
+		<label>姓名</label>
+		<input type="text" id="name" />
+		<input type="button" value="增加" onclick="addchild()" />
+		</div>
+		<table border="1" align="center" style="border-collapse: collapse ;" id="father" width="600px" height="20pxs">
+			<tr id="tr">
+				<td id="td1" align="center">学号</td>
+				<td id="td2" align="center">姓名</td>
+				<td id="td3" align="center">操作</td>
+			</tr>
+		<script type="text/javascript">
+				function addchild()
+				{
+					var tr=document.getElementById("father").insertRow();
+					td1=tr.insertCell();
+					td2=tr.insertCell();
+					td3=tr.insertCell();
+					td1.innerHTML=document.getElementById("num").value;
+					td2.innerHTML=document.getElementById("name").value;
+					operation=document.createElement("input");
+					td3.appendChild(operation);
+					operation.setAttribute("value","删除");
+					operation.setAttribute("type","button");
+					operation.onclick = function()
+					{
+						this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+						
+					}
+					
+				}
+				
+				
+				
+				
+				
+				
+				
+			</script>	
+			
+			
+		</table>
+		
+	</body>
+</html>
